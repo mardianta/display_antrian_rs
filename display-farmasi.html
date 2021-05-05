@@ -35,8 +35,13 @@ background-size: cover;
       td{
         font-size: larger;
         font-weight: bold;
+      }
+
+      .bg-orange{
+        background-color: #E65100;
 
       }
+
       .header{
         color: #fff; padding: 10px; margin-bottom: 10px; background-image: linear-gradient(to right, rgba(44, 44, 44, 0.726) , rgba(226, 226, 226, 0));
 
@@ -54,7 +59,14 @@ background-size: cover;
       }
 
       .card{
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+        border-width:5px;
+        border-style:outset;
+        
+      }
+
+      .card-body{
+        padding-bottom: 0;
       }
 
       .card-header{
@@ -66,7 +78,7 @@ background-size: cover;
     <div class="container-fluid">
       <div class="row header">
         <div class="col-md-2">
-          <div><img src="img/WhatsApp Image 2021-04-30 at 15.16.02.jpeg" style="width: 50px; margin: 5px;" alt=""></div>
+          <div><img src="img/WhatsApp Image 2021-04-30 at 15.16.02.jpeg" style="width: 50px; margin: 3px;" alt=""></div>
         </div>
         <div class="col-md-8" style="text-align: center;">
           <span style="font-weight: bold; font-size: large;"> RUMAH SAKIT WIDODO NGAWI </span><br>
@@ -91,7 +103,7 @@ background-size: cover;
                 <tr>
                   <td class="no-antrian">FR-001</td>
                   <td>10910123</td>
-                  <td><div class="bg-warning text-light">Menunggu di loket</div></td>
+                  <td><div class="bg-orange text-light">Menunggu di loket</div></td>
                 </tr>
                 <tr>
                   <td class="no-antrian">FR-001</td>
@@ -106,14 +118,14 @@ background-size: cover;
                 <tr>
                   <td class="no-antrian">FR-001</td>
                   <td>10910123</td>
-                  <td><div class="bg-warning text-light">Menunggu di loket</div></td>
+                  <td><div class="bg-orange text-light">Menunggu di loket</div></td>
                 </tr>    
               </table>
             </div>
           </div>
         </div>
         <div class="col-md-7">
-          <div class="ratio ratio-16x9">
+          <div class="ratio ratio-16x9 card">
             <iframe style="border:rgba(90, 89, 89, 0.589) solid;"
               src="https://www.youtube.com/embed/vlDzYIIOYmM"
               title="YouTube video"
@@ -126,7 +138,7 @@ background-size: cover;
       <div class="row text-center">
         <div class="col-md-4">
           <div class="card text-center">
-            <div class="card-header bg-warning text-light">Menunggu di loket</div>
+            <div class="card-header bg-orange text-light">Menunggu di loket</div>
             <div class="card-body">
               <!-- <h5 class="card-title">IGD RSI</h5> -->
               <p class="no-antrian1">
@@ -159,7 +171,7 @@ background-size: cover;
         </div>
       </div>
     </div>
-
+    
     
 		<script type="text/javascript">
 		
