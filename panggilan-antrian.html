@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Panggilan Antrian</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <style>
+      *{
+        margin: 0; padding: 0;
+      }
+      body{
+        color: #000;
+      }
+      table{
+        padding: 0px;
+        margin: 0px;
+        justify-content: center;
+        border:rgba(90, 89, 89, 0.589) solid;
+      }
+      td{
+        font-size: larger;
+        font-weight: bold;
+      }
+
+      .bg-orange{
+        background-color: #E65100;
+
+      }
+
+      .header{
+        color: #fff; padding: 10px; margin-bottom: 10px; background-color: #1f4d43;
+
+      }
+      .no-antrian{
+        font-size:xx-large;
+        font-weight: bold;
+        color: red;
+      }
+
+      .no-antrian1{
+        font-size:40px;
+        font-weight: bold;
+        color: red;
+      }
+
+      .card{
+        /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+        border-width:5px;
+        border-style:outset;
+        
+      }
+
+      .card-body{
+        padding-bottom: 0;
+      }
+
+      .card-header{
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+
+        <div class="row header">
+            <div class="col-md-2">
+              <div><img src="img/WhatsApp Image 2021-04-30 at 15.16.02.jpeg" style="width: 50px; margin: 3px;" alt=""></div>
+            </div>
+            <div class="col-md-8" style="text-align: center;">
+              <span style="font-weight: bold; font-size: large;"> RUMAH SAKIT WIDODO </span><br>
+              Jl. Yos Sudarso No.8 Ngawi <br> 
+            </div>
+            <div class="col-md-2" style="text-align: right;">
+              <div id="date"></div>
+              <div id="clock" style="font-weight: bold; font-size: large;"></div>
+            </div>
+          </div>
+
+
+        <div class="row justify-content-center align-items-center" style="
+        margin-top: 50px;
+    " >
+            <div class="form-signin col-md-4 text-center">
+                <h1 class="h3 mb-3 font-weight-normal">Antrian Poli</h1>
+                <label for="inputEmail" class="sr-only">Loket</label>
+                <!-- <input type="number" id="Loket"  class="form-control" placeholder="Loket" required autofocus> -->
+                <select id="Loket" class="form-control">
+                    <option value="1">Satu</option>
+                    <option value="2">Dua</option>
+                </select>
+                <br>
+                <h1 class="h3 mb-3 font-weight-normal">No. Urut Saat ini:</h1>
+                <label for="inputEmail" class="sr-only">No. Urut Saat ini:</label>
+                <input type="text" id="saat_ini" class="form-control" placeholder="No. Urut" value="1" disabled required>
+                <br>
+                <!-- <h1 class="h3 mb-3 font-weight-normal">No. Urut</h1> -->
+                <!-- <label for="inputPassword" class="sr-only">No. Urut</label> -->
+                <h1 class="h3 mb-3 font-weight-normal">No. Urut Selanjutnya:</h1>
+                <label for="inputEmail" class="sr-only">No. Urut Selanjutnya:</label>
+                <input type="number" id="urut" class="form-control" placeholder="No. Urut" value="1" disabled required>
+                <br>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" id="button_suara" onclick="audio()">Selanjutnya</button>
+                <!-- <button class="btn btn-lg btn-danger btn-block" id="panggil_ulang" onclick="audio_2()">Panggil ulang</button> -->
+                <button class="btn btn-lg btn-danger btn-block" id="panggil_ulang" onclick="play_2()">Panggil ulang</button>
+            </div>
+
+        </div>
+    </div>
+
+    <button onclick="play(1)">1</button>
+<button onclick="play(2)">2</button>
+<button onclick="play(3)">3</button>
+<button onclick="play(4)">4</button>
+<button onclick="play(5)">5</button>
+<button onclick="play(bell)">bell</button>
+
+<div>
+  <p>List antrian: <span id="list_antrian">[]</span></p>
+    
+    <script>
+		// Sound provided by https://freesound.org
+		const audioMap = {
+		'1': 'audio/1.wav',
+		'2': 'https://freesound.org/data/previews/67/67750_7037-lq.mp3',
+		'3': 'https://freesound.org/data/previews/67/67752_7037-lq.mp3',
+		'4': 'https://freesound.org/data/previews/67/67753_7037-lq.mp3',
+        '5': 'https://freesound.org/data/previews/67/67754_7037-lq.mp3',
+		'bel': 'audio/Airport_Bell.mp3',
+        'antrian': 'audio/antrian.wav',
+        'counter': 'audio/counter.wav'
+		}
+
+		const main = new LocketAudio();
+
+		function play(num) {
+			main.playAudio(num);
+		}
+
+        function play_2(num) {
+			main.playAudio(num);
+		}
+
+		function LocketAudio() {
+		this.queue = [];
+
+		this.playAudio = function(num) {
+			let self = this;
+			self.queue.push(num);
+			document.getElementById("list_antrian").innerHTML = JSON.stringify(self.queue);
+			if (self.queue.length === 1) {
+			self._call();
+			}
+		}
+
+		this._call = function() {
+			let self = this;
+			
+			if (self.queue.length) {
+			setTimeout(() => {
+						var audio = new Audio(audioMap[self.queue[0]]);
+						audio.play();
+				self.queue.shift();
+				document.getElementById("list_antrian").innerHTML = JSON.stringify(self.queue);
+				audio.onended = function() {
+						self._call();
+						};
+			}, 1500);
+			}
+		}
+		}
+	</script>    
+    
+    <script>
+        var totalwaktu = 0; //variable delay untuk memainkan audio banyak
+        $(document).ready(function(){
+
+            $("#panggil_ulang").on('click',function(){
+                var audiolist=$("#saat_ini").val();
+                var tone=$("#audiolist").val();
+
+                alert(audiolist.duration);
+                
+                setTimeout(function(){
+                    play2('audioAirport_Bell');
+                    totalwaktu=1000;
+                },0);
+                
+                setTimeout(function(){
+                    play2(audiolist);
+                    totalwaktu=0;
+                },4000);
+                
+            });
+        
+        });
+
+        //PLAY FRAMEWORK
+	function play2(id)
+	{
+		const playPromise=document.getElementById(id).play();
+		if(playPromise !== null) // Jika tidak diblock browser, jalankan
+		{
+			playPromise.catch(() => {
+				document.getElementById(id).pause();
+				document.getElementById(id).currentTime=1000;
+				document.getElementById(id).play();
+			})
+		}
+	}
+
+    </script>
+   
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+    <script>
+      var dt = new Date();
+      document.getElementById("tanggalwaktu").innerHTML = dt.toLocaleString();
+      </script>
+
+<script type="text/javascript">
+		
+    function showTime() {
+        var a_p = "";
+        var today = new Date();
+        var curr_hour = today.getHours();
+        var curr_minute = today.getMinutes();
+        var curr_second = today.getSeconds();
+        
+        curr_hour = checkTime(curr_hour);
+        curr_minute = checkTime(curr_minute);
+        curr_second = checkTime(curr_second);
+     document.getElementById('clock').innerHTML=curr_hour + ":" + curr_minute + ":" + curr_second + " " + a_p;
+        }
+
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+    setInterval(showTime, 500);
+    //-->
+    </script>
+
+    <!-- Menampilkan Hari, Bulan dan Tahun -->
+    <br>
+    <script type='text/javascript'>
+        
+        var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+        var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
+        var date = new Date();
+        var day = date.getDate();
+        var month = date.getMonth();
+        var thisDay = date.getDay(),
+            thisDay = myDays[thisDay];
+        var yy = date.getYear();
+        var year = (yy < 1000) ? yy + 1900 : yy;
+  document.getElementById('date').innerHTML=thisDay + ', ' + day + ' ' + months[month] + ' ' + year;
+        // document.write(thisDay + ', ' + day + ' ' + months[month] + ' ' + year);
+        
+    </script>
+  </body>
+</html>
