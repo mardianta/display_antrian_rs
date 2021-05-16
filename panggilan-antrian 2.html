@@ -108,41 +108,7 @@
           </div>
 
           <div class="row text-center justify-content-center">        
-            <div class="col-md-4">
-              <div class="card text-center">
-                <div class="card-header bg-success text-light">ANTRIAN POLI UMUM</div>
-                <div class="card-body">
-                  <table class="table table-bordered">
-                    <tr>
-                      <th>No</th>
-                      <th>No Antrian</th>
-                      <th>No RM</th>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>PU003</td>
-                      <td>10910123</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>PU004</td>
-                      <td>10910123</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>PU005</td>
-                      <td>10910123</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                  </table>
-                  <p>Total antrian : 5</p>
-                </div>
-              </div>
-            </div>    
+            
             <div class="col-md-4">
               <div class="card text-center">
                 <div class="card-header bg-primary text-light">POLI UMUM</div>
@@ -159,37 +125,37 @@
                 </div>
               </div>
             </div>
+
             <div class="col-md-4">
               <div class="card text-center">
-                <div class="card-header bg-orange text-light">ANTRIAN DILEWATI</div>
+                <div class="card-header bg-primary text-light">POLI UMUM</div>
                 <div class="card-body">
-                  <table class="table table-bordered">
-                    <tr>
-                      <th>No</th>
-                      <th>No Antrian</th>
-                      <th>Aksi</th>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>PU001</td>
-                      <td><button class="btn btn-primary btn-block" id="panggil_ulang" onclick="play_2()">Panggil ulang</button></td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                  </table>
+                  <h1 class="h3 font-weight-normal">No. Urut Saat ini:</h1>
+                  <p class="no-antrian1"> PU002 </p>
+                  <h1 class="h3 font-weight-normal">No. Urut Selanjutnya:</h1>
+                  <p class="no-antrian1"> PU003 </p>
+                </div>
+                <div class="card-footer">
+                  <button class="btn  btn-success btn-block" type="submit" id="button_suara" onclick="audio()"><i class="fas fa-play fa-lg" style="margin: 5px;"></i>Selanjutnya</button>
+                  <button class="btn  btn-primary btn-block" id="panggil_ulang" onclick="play_2()"><i class="fas fa-bullhorn fa-lg" style="margin: 5px;"></i>Panggil ulang</button>
+                  <button class="btn  bg-orange text-light btn-block" id="panggil_ulang" onclick="play_2()">Lewati</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card text-center">
+                <div class="card-header bg-primary text-light">POLI UMUM</div>
+                <div class="card-body">
+                  <h1 class="h3 font-weight-normal">No. Urut Saat ini:</h1>
+                  <p class="no-antrian1"> PU002 </p>
+                  <h1 class="h3 font-weight-normal">No. Urut Selanjutnya:</h1>
+                  <p class="no-antrian1"> PU003 </p>
+                </div>
+                <div class="card-footer">
+                  <button class="btn  btn-success btn-block" type="submit" id="button_suara" onclick="audio()"><i class="fas fa-play fa-lg" style="margin: 5px;"></i>Selanjutnya</button>
+                  <button class="btn  btn-primary btn-block" id="panggil_ulang" onclick="play_2()"><i class="fas fa-bullhorn fa-lg" style="margin: 5px;"></i>Panggil ulang</button>
+                  <button class="btn  bg-orange text-light btn-block" id="panggil_ulang" onclick="play_2()">Lewati</button>
                 </div>
               </div>
             </div>

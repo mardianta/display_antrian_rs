@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Display Poli</title>
+    <title>Display Antrian Poli</title>
     <!-- MDB icon -->
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
     <!-- Google Fonts Roboto -->
@@ -20,11 +20,24 @@
       *{
         margin: 0; padding: 0;
       }
+
+      .header{
+        color: #fff; padding: 10px; margin-bottom: 10px; background-image: linear-gradient(to right, rgba(44, 44, 44, 0.726) , rgba(226, 226, 226, 0));
+
+      }
+
       body{
         color: #000;
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1011%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(0%2c 148%2c 114%2c 1)'%3e%3c/rect%3e%3cpath d='M 0%2c25 C 57.6%2c54 172.8%2c170.2 288%2c170 C 403.2%2c169.8 460.8%2c22 576%2c24 C 691.2%2c26 748.8%2c167.6 864%2c180 C 979.2%2c192.4 1036.8%2c93.2 1152%2c86 C 1267.2%2c78.8 1382.4%2c132.4 1440%2c144L1440 560L0 560z' fill='rgba(4%2c 130%2c 101%2c 1)'%3e%3c/path%3e%3cpath d='M 0%2c307 C 96%2c338.8 288%2c469.4 480%2c466 C 672%2c462.6 768%2c288.6 960%2c290 C 1152%2c291.4 1344%2c436.4 1440%2c473L1440 560L0 560z' fill='rgba(4%2c 117%2c 91%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1011'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
-background-attachment: fixed;
-background-size: cover;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+
+      .footer{
+        color: #fff; 
+        margin-top: 10px; 
+        background-image: linear-gradient(to right, rgba(44, 44, 44, 0.726) , rgba(226, 226, 226, 0));
+        /* position:absolute; bottom:20px; */
       }
       table{
         padding: 0px;
@@ -42,18 +55,14 @@ background-size: cover;
 
       }
 
-      .header{
-        color: #fff; padding: 10px; margin-bottom: 10px; background-image: linear-gradient(to right, rgba(44, 44, 44, 0.726) , rgba(226, 226, 226, 0));
-
-      }
       .no-antrian{
-        font-size:xx-large;
+        font-size:100px;
         font-weight: bold;
         color: red;
       }
 
       .no-antrian1{
-        font-size:40px;
+        font-size:60px;
         font-weight: bold;
         color: red;
       }
@@ -75,103 +84,99 @@ background-size: cover;
     </style>
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="row header">
-        <div class="col-md-2">
-          <div><img src="img/WhatsApp Image 2021-04-30 at 15.16.02.jpeg" style="width: 50px; margin: 3px;" alt=""></div>
-        </div>
-        <div class="col-md-8" style="text-align: center;">
-          <span style="font-weight: bold; font-size: large;"> RUMAH SAKIT WIDODO </span><br>
-          Jl. Yos Sudarso No.8 Ngawi
-        </div>
-        <div class="col-md-2" style="text-align: right;">
-          <div id="date"></div>
-          <div id="clock" style="font-weight: bold; font-size: large;"></div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-md-5">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title text-center">DISPLAY ANTRIAN POLI</h5>
-              <table class="table table-striped text-center " style="justify-content: center;">
-                <tr>
-                  <th>No RM</th>
-                  <th>Nomer Antrian</th>
-                  <th>Nama Poli</th>
-                </tr>
-                <tr>
-                  <td>10910123</td>
-                  <td class="no-antrian">A1-2</td>
-                  <td>POLI UMUM</td>
-                </tr>
-                <tr>
-                  <td>10910123</td>
-                  <td class="no-antrian">A1-2</td>
-                  <td>POLI UMUM</td>
-                </tr>
-                <tr>
-                  <td>10910123</td>
-                  <td class="no-antrian">A1-2</td>
-                  <td>POLI UMUM</td>
-                </tr>
-                <tr>
-                  <td>10910123</td>
-                  <td class="no-antrian">A1-2</td>
-                  <td>POLI UMUM</td>
-                </tr>       
-              </table>
+    <section>
+      <div class="container-fluid">  
+        <div class="row header">
+          <div class="col-md-2">
+            <div><img src="img/WhatsApp Image 2021-04-30 at 15.16.02.jpeg" style="width: 50px; margin: 3px;" alt=""></div>
+          </div>
+          <div class="col-md-8" style="text-align: center;">
+            <span style="font-weight: bold; font-size: large;"> RUMAH SAKIT WIDODO </span><br>
+            Jl. Yos Sudarso No.8 Ngawi <br> 
+          </div>
+          <div class="col-md-2" style="text-align: right;">
+            <div id="date"></div>
+            <div id="clock" style="font-weight: bold; font-size: large;"></div>
+          </div>
+        </div>    
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="card text-center">
+              <div class="card-header bg-success text-light"><h1>NOMOR ANTRIAN</h1></div>
+              <div class="card-body">
+                <!-- <h5 class="card-title">IGD RSI</h5> -->
+                <p class="no-antrian">
+                  PU001
+                </p>
+              </div>
+              <div class="card-footer" style="margin: 10px;">
+                <h1>
+                  Poli UMUM
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="ratio card" style="height: 100%;">
+              <iframe style="border:rgba(90, 89, 89, 0.589) solid;"
+                src="https://www.youtube.com/embed/vlDzYIIOYmM"
+                title="YouTube video"
+                allowfullscreen
+              ></iframe>
             </div>
           </div>
         </div>
-        <div class="col-md-7">
-          <div class="ratio ratio-16x9 card">
-            <iframe
-              src="https://www.youtube.com/embed/vlDzYIIOYmM"
-              title="YouTube video"
-              allowfullscreen
-            ></iframe>
+        <hr>
+        <div class="row text-center">
+          <div class="col-md-4">
+            <div class="card text-center">
+              <div class="card-header bg-primary text-light"><h4>POLI UMUM</h4></div>
+              <div class="card-body">
+                <!-- <h5 class="card-title">IGD RSI</h5> -->
+                <p class="no-antrian1">
+                  PU001
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <hr>
-      <div class="row text-center">
-        <div class="col-md-4">
-          <div class="card text-center">
-            <div class="card-header bg-primary text-light">R.001</div>
-            <div class="card-body">
-              <h5 class="card-title">POLI UMUM</h5>
-              <p class="no-antrian">
-                A1-2
-              </p>
+          <div class="col-md-4">
+            <div class="card text-center">
+              <div class="card-header bg-primary text-light"><h4>POLI PENYAKIT DALAM</h4></div>
+              <div class="card-body">
+                <!-- <h5 class="card-title">IGD RSI</h5> -->
+                <p class="no-antrian1">
+                  PD001
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card text-center">
+              <div class="card-header bg-primary text-light"><h4>POLI MULUT</h4> </div>
+              <div class="card-body">
+                <!-- <h5 class="card-title">IGD RSI</h5> -->
+                <p class="no-antrian1">
+                  PM001
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card text-center ">
-            <div class="card-header bg-primary text-light">R.001</div>
-            <div class="card-body">
-              <h5 class="card-title">POLI UMUM</h5>
-              <p class="no-antrian">
-                A1-2
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card text-center">
-            <div class="card-header bg-primary text-light">R.001</div>
-            <div class="card-body">
-              <h5 class="card-title">POLI UMUM</h5>
-              <p class="no-antrian">
-                A1-2
-              </p>
-            </div>
+        <div class="row footer" style="margin-top: 30px;">
+          <div class="col-12">
+            <marquee onmouseover="stop();" onmouseout="start()">
+              <span style="font-weight: bold; font-size: large;"> Informasi Rumah sakit No Telp. 033xxxxx</span>
+            </marquee>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
+    <!-- <footer>
+      <div>Telp. (0351) 746777, Fa.(0351) 747577,
+        Email : rswidodo557@gmail.com</div>
+    </footer> -->
+    
     
 		<script type="text/javascript">
 		
