@@ -97,7 +97,46 @@
 
           <div class="row text-center justify-content-center">            
             <div class="col-4">
-              <!-- <h2>Jumlah Antrian : 5</h2> -->
+              <!-- Tabs navs -->
+            <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link active"
+                  id="ex1-tab-1"
+                  data-mdb-toggle="tab"
+                  href="#ex1-tabs-1"
+                  role="tab"
+                  aria-controls="ex1-tabs-1"
+                  aria-selected="true"
+                  >Poli Umum</a
+                >
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link"
+                  id="ex1-tab-2"
+                  data-mdb-toggle="tab"
+                  href="#ex1-tabs-2"
+                  role="tab"
+                  aria-controls="ex1-tabs-2"
+                  aria-selected="false"
+                  >Poli Anak</a
+                >
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link"
+                  id="ex1-tab-3"
+                  data-mdb-toggle="tab"
+                  href="#ex1-tabs-3"
+                  role="tab"
+                  aria-controls="ex1-tabs-3"
+                  aria-selected="false"
+                  >Poli Gigi</a
+                >
+              </li>
+            </ul>
+            <!-- Tabs navs -->
             </div>
             <div class="col-4">
               <h2>TV 1</h2>
@@ -106,93 +145,289 @@
               <!-- <h2>Antrian Selesai : 30 </h2> -->
             </div>
           </div>
+          
 
-          <div class="row text-center justify-content-center">        
-            <div class="col-md-4">
-              <div class="card text-center">
-                <div class="card-header bg-success text-light">ANTRIAN POLI UMUM</div>
-                <div class="card-body">
-                  <table class="table table-bordered">
-                    <tr>
-                      <th>No</th>
-                      <th>No Antrian</th>
-                      <th>No RM</th>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>PU003</td>
-                      <td>10910123</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>PU004</td>
-                      <td>10910123</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>PU005</td>
-                      <td>10910123</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                  </table>
-                  <p>Total antrian : 5</p>
+          <div class="row text-center justify-content-center">
+            <!-- Tabs content -->
+            <div class="tab-content" id="ex1-content">
+              <div
+                class="tab-pane fade show active"
+                id="ex1-tabs-1"
+                role="tabpanel"
+                aria-labelledby="ex1-tab-1"
+              >
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card text-center">
+                      <div class="card-header bg-success text-light">ANTRIAN POLI UMUM</div>
+                      <div class="card-body">
+                        <table class="table table-bordered">
+                          <tr>
+                            <th>No</th>
+                            <th>No Antrian</th>
+                            <th>No RM</th>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>PU003</td>
+                            <td>10910123</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>PU004</td>
+                            <td>10910123</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>PU005</td>
+                            <td>10910123</td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                        </table>
+                        <p>Total antrian : 5</p>
+                      </div>
+                    </div>
+                  </div>    
+                  <div class="col-md-4">
+                    <div class="card text-center">
+                      <div class="card-header bg-primary text-light">POLI ANAK</div>
+                      <div class="card-body">
+                        <h1 class="h3 font-weight-normal">No. Urut Saat ini:</h1>
+                        <p class="no-antrian1"> PU002 </p>
+                        <h1 class="h3 font-weight-normal">No. Urut Selanjutnya:</h1>
+                        <p class="no-antrian1"> PU003 </p>
+                      </div>
+                      <div class="card-footer">
+                        <button class="btn  btn-success btn-block" type="submit" id="button_suara" onclick="audio()"><i class="fas fa-play fa-lg" style="margin: 5px;"></i>Selanjutnya</button>
+                        <button class="btn  btn-primary btn-block" id="panggil_ulang" onclick="play_2()"><i class="fas fa-bullhorn fa-lg" style="margin: 5px;"></i>Panggil ulang</button>
+                        <button class="btn  bg-orange text-light btn-block" id="panggil_ulang" onclick="play_2()">Lewati</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card text-center">
+                      <div class="card-header bg-orange text-light">ANTRIAN DILEWATI</div>
+                      <div class="card-body">
+                        <table class="table table-bordered">
+                          <tr>
+                            <th>No</th>
+                            <th>No Antrian</th>
+                            <th>Aksi</th>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>PU001</td>
+                            <td><button class="btn btn-primary btn-block" id="panggil_ulang" onclick="play_2()">Panggil ulang</button></td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
-            </div>    
-            <div class="col-md-4">
-              <div class="card text-center">
-                <div class="card-header bg-primary text-light">POLI UMUM</div>
-                <div class="card-body">
-                  <h1 class="h3 font-weight-normal">No. Urut Saat ini:</h1>
-                  <p class="no-antrian1"> PU002 </p>
-                  <h1 class="h3 font-weight-normal">No. Urut Selanjutnya:</h1>
-                  <p class="no-antrian1"> PU003 </p>
+              <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card text-center">
+                      <div class="card-header bg-success text-light">ANTRIAN POLI ANAK</div>
+                      <div class="card-body">
+                        <table class="table table-bordered">
+                          <tr>
+                            <th>No</th>
+                            <th>No Antrian</th>
+                            <th>No RM</th>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>PA003</td>
+                            <td>10910123</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>PA004</td>
+                            <td>10910123</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>PA005</td>
+                            <td>10910123</td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                        </table>
+                        <p>Total antrian : 5</p>
+                      </div>
+                    </div>
+                  </div>    
+                  <div class="col-md-4">
+                    <div class="card text-center">
+                      <div class="card-header bg-primary text-light">POLI UMUM</div>
+                      <div class="card-body">
+                        <h1 class="h3 font-weight-normal">No. Urut Saat ini:</h1>
+                        <p class="no-antrian1"> PA002 </p>
+                        <h1 class="h3 font-weight-normal">No. Urut Selanjutnya:</h1>
+                        <p class="no-antrian1"> PA003 </p>
+                      </div>
+                      <div class="card-footer">
+                        <button class="btn  btn-success btn-block" type="submit" id="button_suara" onclick="audio()"><i class="fas fa-play fa-lg" style="margin: 5px;"></i>Selanjutnya</button>
+                        <button class="btn  btn-primary btn-block" id="panggil_ulang" onclick="play_2()"><i class="fas fa-bullhorn fa-lg" style="margin: 5px;"></i>Panggil ulang</button>
+                        <button class="btn  bg-orange text-light btn-block" id="panggil_ulang" onclick="play_2()">Lewati</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card text-center">
+                      <div class="card-header bg-orange text-light">ANTRIAN DILEWATI</div>
+                      <div class="card-body">
+                        <table class="table table-bordered">
+                          <tr>
+                            <th>No</th>
+                            <th>No Antrian</th>
+                            <th>Aksi</th>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>PA001</td>
+                            <td><button class="btn btn-primary btn-block" id="panggil_ulang" onclick="play_2()">Panggil ulang</button></td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
-                <div class="card-footer">
-                  <button class="btn  btn-success btn-block" type="submit" id="button_suara" onclick="audio()"><i class="fas fa-play fa-lg" style="margin: 5px;"></i>Selanjutnya</button>
-                  <button class="btn  btn-primary btn-block" id="panggil_ulang" onclick="play_2()"><i class="fas fa-bullhorn fa-lg" style="margin: 5px;"></i>Panggil ulang</button>
-                  <button class="btn  bg-orange text-light btn-block" id="panggil_ulang" onclick="play_2()">Lewati</button>
+              </div>
+              <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card text-center">
+                      <div class="card-header bg-success text-light">ANTRIAN POLI GIGI</div>
+                      <div class="card-body">
+                        <table class="table table-bordered">
+                          <tr>
+                            <th>No</th>
+                            <th>No Antrian</th>
+                            <th>No RM</th>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>PG003</td>
+                            <td>10910123</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>PG004</td>
+                            <td>10910123</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>PG005</td>
+                            <td>10910123</td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                        </table>
+                        <p>Total antrian : 5</p>
+                      </div>
+                    </div>
+                  </div>    
+                  <div class="col-md-4">
+                    <div class="card text-center">
+                      <div class="card-header bg-primary text-light">POLI GIGI</div>
+                      <div class="card-body">
+                        <h1 class="h3 font-weight-normal">No. Urut Saat ini:</h1>
+                        <p class="no-antrian1"> PG002 </p>
+                        <h1 class="h3 font-weight-normal">No. Urut Selanjutnya:</h1>
+                        <p class="no-antrian1"> PG003 </p>
+                      </div>
+                      <div class="card-footer">
+                        <button class="btn  btn-success btn-block" type="submit" id="button_suara" onclick="audio()"><i class="fas fa-play fa-lg" style="margin: 5px;"></i>Selanjutnya</button>
+                        <button class="btn  btn-primary btn-block" id="panggil_ulang" onclick="play_2()"><i class="fas fa-bullhorn fa-lg" style="margin: 5px;"></i>Panggil ulang</button>
+                        <button class="btn  bg-orange text-light btn-block" id="panggil_ulang" onclick="play_2()">Lewati</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card text-center">
+                      <div class="card-header bg-orange text-light">ANTRIAN DILEWATI</div>
+                      <div class="card-body">
+                        <table class="table table-bordered">
+                          <tr>
+                            <th>No</th>
+                            <th>No Antrian</th>
+                            <th>Aksi</th>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>PG001</td>
+                            <td><button class="btn btn-primary btn-block" id="panggil_ulang" onclick="play_2()">Panggil ulang</button></td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="card text-center">
-                <div class="card-header bg-orange text-light">ANTRIAN DILEWATI</div>
-                <div class="card-body">
-                  <table class="table table-bordered">
-                    <tr>
-                      <th>No</th>
-                      <th>No Antrian</th>
-                      <th>Aksi</th>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>PU001</td>
-                      <td><button class="btn btn-primary btn-block" id="panggil_ulang" onclick="play_2()">Panggil ulang</button></td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </div>
+            <!-- Tabs content -->        
+            
           </div>
 
           <div class="row footer">
